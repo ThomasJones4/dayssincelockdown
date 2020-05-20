@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -12,7 +13,7 @@ class HomeController extends Controller
    *
    * @return View
    */
-    function dayssince() {
+    public function dayssince() {
         $dt = Carbon::createMidnightDate(2020, 3, 23);
         $dayssincelockdownbegan = $dt->diffInDays(Carbon::now());
 
