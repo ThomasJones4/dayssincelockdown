@@ -14,8 +14,10 @@ use Carbon\Carbon;
 |
 */
 
+
 Route::get('/', function () {
   $dt = Carbon::createMidnightDate(2020, 3, 23);
-  $dayssincelockdownbegan = $dt->diffInDays($dt->copy()->addMonth());
+  $dayssincelockdownbegan = $dt->diffInDays(Carbon::now());
   return view('dayssince', compact('dayssincelockdownbegan'));
 });
+
